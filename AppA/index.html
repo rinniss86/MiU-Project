@@ -29,11 +29,10 @@
 		<div data-role="header" data-position="fixed" data-theme="a">
 		</div>
 					<img src="images/OmNomNom.png" />
-
-		<input type="text" id="searchInput" placeholder="search" />
-		<input type="submit" value="Search" id="searchButton" /> <br>
 		
 		<div data-role="content">
+			<label for="search-basic">Search:</label>
+			e<input type="search" name="search" id="searc-basic" value="" />
 			<p><a href="#cook" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="e"><img src="images/Cook Your Own.png" />Cook Your Own</a></p>
 			<p><a href="#pickup" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="e"><img src="images/Pick Up.png" />Pick Up</a></p>
 			<p><a href="#delivery" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="e"><img src="images/Delivery.png" />Delivery</a></p>
@@ -244,32 +243,41 @@
 				<legend>Consumer</legend>
 				<ul id="errors"></ul>
 				<ul id="consumerInfo">
+				
+			
 					<li><label for="name">Name*:</label><input type="text" id="name" /></li>
-					<!-- <li><label for="pword">Password:</label><input type="password" id="pword" /></li> -->
+			
+		
 					<li><label for="email">E-mail*:</label><input type="email" id="email" placeholder="example@abc123.com" /></li>
+				
+				
 					<li><label for="phone">Phone(Optional)</label><input type="text" id="phone" placeholder="(xxx)xxx-xxxx" /></li>
+					
 				</ul>
 				</div>
 				<div data-role="fieldcontain">
+					<fieldset data-role="controlgroup">
 			
-				<legend>What are you Craving?</legend>
-				<ul>
-					<li><input type="radio" value="chinese" id="chinese" name="food" /><label for="chinese">Chinese</label></li>
-					<li><input type="radio" value="spanish" id="spanish" name="food" /><label for="spanish">Spanish</label></li>
-					<li><input type="radio" value="indian" id="indian" name="food" /><label for="indian">Indian</label></li>
-					<li><input type="radio" value="american" id="american" name="food" /><label for="american">American</label></li>
-					<li><input type="radio" value="italian" id="italian" name="food" /><label for="italian">Italian</label></li>
-					<li><input type="radio" value="other" id="other" name="food" /><label for="other">Other</label></li>
-				</ul>
-				<ul>
-					<li><input type="checkbox" id="fav" value="Yes" class="checkbox" /><label for="fav">Save as Favorite?</label></li>
-				</ul>
+						<legend>What are you Craving?</legend>
+					<ul>
+						<li><input type="radio" value="chinese" id="chinese" name="food" /><label for="chinese">Chinese</label></li>
+						<li><input type="radio" value="spanish" id="spanish" name="food" /><label for="spanish">Spanish</label></li>
+						<li><input type="radio" value="indian" id="indian" name="food" /><label for="indian">Indian</label></li>
+						<li><input type="radio" value="american" id="american" name="food" /><label for="american">American</label></li>
+						<li><input type="radio" value="italian" id="italian" name="food" /><label for="italian">Italian</label></li>
+						<li><input type="radio" value="other" id="other" name="food" /><label for="other">Other</label></li>
+					</ul>
+					<ul>
+						<li><input type="checkbox" id="fav" value="Yes" class="checkbox" /><label for="fav">Save as Favorite?</label></li>
+					</ul>
+					</fieldset>
 				</div>
 				<div data-role="fieldcontain">
 			
 				<legend>How do you want it?</legend>
 					<ul>
-						<li><label for="howMuch">How Hungry are You?</label><input type="range" min="0" max="10" step="1" value="hungry" id="hungry" /></li>
+						<li><label for="howMuch">How Hungry are You?</label>
+						<input type="range" min="0" max="10" step="1" value="0" id="hungry" /></li>
 						<div id="hungerNum"></div>
 						
 						<li><label for="when">When*:</label><input type="date" value="date" id="date" /></li>											<li><label for="group">Where to Eat*</label></li>	
@@ -279,7 +287,8 @@
 					</select>
 			<li><label for="instructions">Special Instructions</label><textarea id="instructions" placeholder="What Would You Like?"></textarea></li>
 			</div></ul>
-			<input type="submit" value="Submit" id="submit" />
+			<input type="reset" value="Reset" id="reset" data-theme="a" />
+			<input type="submit" value="Submit" id="submit" data-theme="b" />
 					
 		</form>
 		
