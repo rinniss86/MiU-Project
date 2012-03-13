@@ -237,56 +237,77 @@
 			<a href="additem.html" id="addNew" style="display:none;">Add New Craving</a> 
 		</nav>
 
-		<form action="#" method="post" id="form" data-ajax="false">
+		<form action="" method="post" id="form" data-ajax="false">
 			<span>*Fields are Required.</span>
 				<div data-role="fieldcontain">
 				<legend>Consumer</legend>
 				<ul id="errors"></ul>
-				<ul id="consumerInfo">
+				
 				
 			
-					<li><label for="name">Name*:</label><input type="text" id="name" /></li>
+					<label for="name">Name*:</label>
+					<input type="text" name="name" id="name" />
 			
 		
-					<li><label for="email">E-mail*:</label><input type="email" id="email" placeholder="example@abc123.com" /></li>
+					<label for="email">E-mail*:</label>
+					<input type="email" name="name" id="email" placeholder="example@abc123.com" />
 				
 				
-					<li><label for="phone">Phone(Optional)</label><input type="text" id="phone" placeholder="(xxx)xxx-xxxx" /></li>
+					<label for="phone">Phone(Optional)</label>
+					<input type="text" name="phone" id="phone" placeholder="(xxx)xxx-xxxx" />
 					
-				</ul>
+				
 				</div>
 				<div data-role="fieldcontain">
 					<fieldset data-role="controlgroup">
 			
 						<legend>What are you Craving?</legend>
-					<ul>
-						<li><input type="radio" value="chinese" id="chinese" name="food" /><label for="chinese">Chinese</label></li>
-						<li><input type="radio" value="spanish" id="spanish" name="food" /><label for="spanish">Spanish</label></li>
-						<li><input type="radio" value="indian" id="indian" name="food" /><label for="indian">Indian</label></li>
-						<li><input type="radio" value="american" id="american" name="food" /><label for="american">American</label></li>
-						<li><input type="radio" value="italian" id="italian" name="food" /><label for="italian">Italian</label></li>
-						<li><input type="radio" value="other" id="other" name="food" /><label for="other">Other</label></li>
-					</ul>
-					<ul>
-						<li><input type="checkbox" id="fav" value="Yes" class="checkbox" /><label for="fav">Save as Favorite?</label></li>
-					</ul>
+					
+						<input type="radio" value="chinese" id="chinese" name="food" />
+						<label for="chinese">Chinese</label>
+						<input type="radio" value="spanish" id="spanish" name="food" />
+						<label for="spanish">Spanish</label>
+						<input type="radio" value="indian" id="indian" name="food" />
+						<label for="indian">Indian</label>
+						<input type="radio" value="american" id="american" name="food" />
+						<label for="american">American</label>
+						<input type="radio" value="italian" id="italian" name="food" />
+						<label for="italian">Italian</label>
+						<input type="radio" value="other" id="other" name="food" />
+						<label for="other">Other</label>
+					
+					
+						<input type="checkbox" id="fav" value="Yes" class="checkbox" />
+						<label for="fav">Save as Favorite?</label>
+					
 					</fieldset>
 				</div>
 				<div data-role="fieldcontain">
 			
 				<legend>How do you want it?</legend>
-					<ul>
-						<li><label for="howMuch">How Hungry are You?</label>
-						<input type="range" min="0" max="10" step="1" value="0" id="hungry" /></li>
+					
+						<label for="howMuch">How Hungry are You?</label>
+						<input type="range" min="0" max="10" step="1" value="5" name="hungry" id="hungry" />
 						<div id="hungerNum"></div>
 						
-						<li><label for="when">When*:</label><input type="date" value="date" id="date" /></li>											<li><label for="group">Where to Eat*</label></li>	
-					<select id="select">
+						<label for="when">When*:</label>
+						<input type="date" value="date" id="date" />
+						<label for="group">Where to Eat*</label>
+						<select name="select" id="select" data-native-menu="false">
+							<option value="where" data-placeholder="true">--Where to Eat--</option>
+							<optgroup label="go-out">
+								<option value="sitdown">Sit Down</option>
+								<option value="pickup">Pick Up</option>
+							</optgroup>
+							<optgroup label="stay-home">
+								<option value="delivery">Delivery</option>
+								<option value="cookyourown">Cook Your Own</option>
+							</optgroup>
 						
-						
-					</select>
-			<li><label for="instructions">Special Instructions</label><textarea id="instructions" placeholder="What Would You Like?"></textarea></li>
-			</div></ul>
+						</select>
+			<label for="instructions">Special Instructions</label>
+			<textarea id="instructions" placeholder="What Would You Like?"></textarea>
+			</div>
 			
 			<input type="submit" value="Submit" id="submit" data-theme="b" />
 			<input type="reset" value="Reset" id="reset" data-theme="a" />
@@ -305,10 +326,10 @@
 
 		</div>
 			<script type="text/javascript" src="js/json.js"></script>
-			<script type="text/javascript" src="js/main.js"></script>
+			
 
 
-		</div>
+	</div>
 		
 		
 		<div data-role="page" id="construction" data-add-back-btn="true">
@@ -347,7 +368,7 @@
 		<!-- JavaScript Here -->
 		<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
-		<script type="text/javascript" src="js/main.js"></script>
+		<!--<script type="text/javascript" src="js/main.js"></script> -->
 </body>
 	
 	
