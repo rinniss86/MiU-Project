@@ -26,20 +26,20 @@
 
 	<div data-role="page" id="home">
 	
-		<div data-role="header" data-position="fixed" data-theme="a">
-		</div>
+		
+		
 					<img src="images/OmNomNom.png" />
 		
 		<div data-role="content">
-			<label for="search-basic">Search:</label>
-			<input type="search" name="search" id="searc-basic" value="" />
+			<div data-filter="true">
+			
 			<p><a href="#cook" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="e"><img src="images/Cook Your Own.png" />Cook Your Own</a></p>
 			<p><a href="#pickup" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="e"><img src="images/Pick Up.png" />Pick Up</a></p>
 			<p><a href="#delivery" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="e"><img src="images/Delivery.png" />Delivery</a></p>
 			<p><a href="#sitdown" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="e"><img src="images/Sit Down.png" />Sit Down</a></p>
 			<p><a href="#order" data-role="button" data-icon="plus" data-iconpos="right" data-theme="a">Add Order</a></p>
 
-
+			</div>
 
 		</div>
 		
@@ -243,71 +243,87 @@
 							
 					<label for="name">Name*:</label>
 					<input type="text" name="name" id="name" class="required" />
-			
+				</div>
+				<div data-role="fieldcontain">
 		
 					<label for="email">E-mail*:</label>
-					<input type="email" name="name" id="email" class="required email" placeholder="example@abc123.com" />
-				
+					<input type="email" name="email" id="email" class="required email" placeholder="example@abc123.com" />
+				</div>
+				<div data-role="fieldcontain">
 				
 					<label for="age">Age*:</label>
 					<input type="text" name="age" id="age" class="required number" />
-					
+				</div>	
 				
-				</div>
+				
 				<div data-role="fieldcontain">
 					<fieldset data-role="controlgroup">
 			
 						<legend>What are you Craving*:</legend>
 					
-						<input type="radio" value="chinese" id="chinese" name="food" class="required" />
-						<label for="chinese">Chinese</label>
-						<input type="radio" value="spanish" id="spanish" name="food" />
-						<label for="spanish">Spanish</label>
-						<input type="radio" value="indian" id="indian" name="food" />
-						<label for="indian">Indian</label>
-						<input type="radio" value="american" id="american" name="food" />
-						<label for="american">American</label>
-						<input type="radio" value="italian" id="italian" name="food" />
-						<label for="italian">Italian</label>
-						<input type="radio" value="other" id="other" name="food" />
-						<label for="other">Other</label>
+							<input type="radio" value="chinese" id="chinese" name="food" class="required" />
+							<label for="chinese">Chinese</label>
+							<input type="radio" value="spanish" id="spanish" name="food" />
+							<label for="spanish">Spanish</label>
+							<input type="radio" value="indian" id="indian" name="food" />
+							<label for="indian">Indian</label>
+							<input type="radio" value="american" id="american" name="food" />
+							<label for="american">American</label>
+							<input type="radio" value="italian" id="italian" name="food" />
+							<label for="italian">Italian</label>
+							<input type="radio" value="other" id="other" name="food" />
+							<label for="other">Other</label>
+				</div>
+				<div data-role="fieldcontain">	
 					
-					
-						<input type="checkbox" id="fav" value="Yes" class="checkbox" class="required" />
+						<input type="checkbox" id="fav" value="Yes" class="checkbox" />
 						<label for="fav">Save as Favorite?</label>
 					
 					</fieldset>
 				</div>
 				<div data-role="fieldcontain">
 			
-				<legend>How do you want it?</legend>
+					<legend>How do you want it?</legend>
 					
 						<label for="howMuch">How Hungry are You?</label>
 						<input type="range" min="0" max="10" step="1" value="5" name="hungry" id="hungry" />
 						<div id="hungerNum"></div>
-			
-						<label for="when">When*:</label>
-						<input type="date" value="date" id="date" />
-						<label for="group">Where to Eat*</label>
-						<select name="select" id="select" data-native-menu="false" class="required">
-							<option value="where" data-placeholder="true">--Where to Eat--</option>
-							<optgroup label="go-out">
+				</div>
+				<div data-role="fieldcontain">
+					<label for="when">When*:</label>
+					<input name="date" id="date" type="date" data-role="datebox" data-options='{"mode": "calbox", "calStartDay": 1}'> 
+				</div>
+				
+				
+				<div data-role="fieldcontain">
+						
+						<label for="select">Where to Eat*</label>
+						<select name="select" id="select" class="required">
+							<option data-placeholder="true" value>--Where to Eat--</option>
+							<optgroup label="Go Out">
 								<option value="sitdown">Sit Down</option>
 								<option value="pickup">Pick Up</option>
 							</optgroup>
-							<optgroup label="stay-home">
+							<optgroup label="Stay Home">
 								<option value="delivery">Delivery</option>
 								<option value="cookyourown">Cook Your Own</option>
 							</optgroup>
 						
 						</select>
-			<label for="instructions">Special Instructions</label>
-			<textarea id="instructions" placeholder="What Would You Like?"></textarea>
-			</div>
+					
+				</div>
+				<div data-role="fieldcontain">		
+					<label for="instructions">Special Instructions</label>
+					<textarea id="instructions" placeholder="What Would You Like?"></textarea>
+				</div>
+				 <div data-role="fieldcontain">
 			
-			<input type="submit" value="Submit" id="submit" data-theme="b" />
-			<input type="reset" value="Reset" id="reset" data-theme="a" />
-			
+					<input type="submit" value="Submit" id="submit" data-theme="b" />
+				</div>
+				<div data-role="fieldcontain">	
+					<input type="reset" value="Reset" id="reset" data-theme="a" />
+				</div>
+				
 			<a href="#errors" id="oferrorslink" data-rel="dialog" data-transition="pop">Errors</a>
 					
 		</form>
