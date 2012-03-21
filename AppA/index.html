@@ -24,15 +24,15 @@
 </head>
 <body>
 
-	<div data-role="page" id="home">
+	<div data-role="page" id="home" data-theme="a">
 		<center> <img src="images/OmNomNom.png" /> </center>		
 		<div data-role="content">
 			<ul data-role="listview" data-filter="true">
 			
-				<li><p><a href="#cook" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="e"><img src="images/Cook Your Own.png" />Cook Your Own</li></a></p>
-				<li><p><a href="#pickup" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="e"><img src="images/Pick Up.png" />Pick Up</li></a></p>
-				<li><p><a href="#delivery" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="e"><img src="images/Delivery.png" />Delivery</li></a></p>					<li><p><a href="#sitdown" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="e"><img src="images/Sit Down.png" />Sit Down</li></a></p>
-				<li><p><a href="#order" data-role="button" data-icon="plus" data-iconpos="right" data-theme="a">Add Order</li></a></p>
+				<li><p><a href="#cook" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="e"><img src="images/Cook Your Own.png" />Cook Your Own</a></li></a></p>
+				<li><p><a href="#pickup" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="e"><img src="images/Pick Up.png" />Pick Up</a></li></p>
+				<li><p><a href="#delivery" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="e"><img src="images/Delivery.png" />Delivery</a></li></p>					<li><p><a href="#sitdown" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="e"><img src="images/Sit Down.png" />Sit Down</a></li></p>
+				<li><p><a href="#order" data-role="button" data-icon="plus" data-iconpos="right" data-theme="b">Add Order</a></li></p>
 			
 			</ul>
 		</div>
@@ -51,7 +51,7 @@
 	
 	</div>
 	
-	<div data-role="page" id="cook" data-add-back-btn="true">
+	<div data-role="page" id="cook" data-add-back-btn="true" data-theme="a">
 	
 		<div data-role="header">
 			<h1>Cook Your Own</h1>
@@ -105,7 +105,7 @@
 	
 	</div>
 	
-	<div data-role="page" id="pickup" data-add-back-btn="true">
+	<div data-role="page" id="pickup" data-add-back-btn="true" data-theme="a">
 	
 		<div data-role="header">
 			<h1>Pick Up</h1>
@@ -129,7 +129,7 @@
 	
 	</div>
 	
-	<div data-role="page" id="delivery" data-add-back-btn="true">
+	<div data-role="page" id="delivery" data-add-back-btn="true" data-theme="a">
 	
 		<div data-role="header">
 			<h1>Delivery</h1>
@@ -153,7 +153,7 @@
 	
 	</div>
 	
-	<div data-role="page" id="sitdown" data-add-back-btn="true">
+	<div data-role="page" id="sitdown" data-add-back-btn="true" data-theme="a">
 	
 		<div data-role="header">
 			<h1>Sit Down</h1>
@@ -221,7 +221,7 @@
 		
 	</div>
 	
-	<div data-role="page" id="order"  data-add-back-btn="true">
+	<div data-role="page" id="order"  data-add-back-btn="true" data-theme="a">
 	<div data-role="header">
 		<h1> Lunch Time!</h1>
 	</div>	
@@ -285,8 +285,9 @@
 						<div id="hungerNum"></div>
 				</div>
 				<div data-role="fieldcontain">
-					<label for="date">When:</label>
-					<input name="date" id="date" type="date" class="required date">
+					<label for="mydate">Some Date</label>
+
+					<input name="mydate" id="mydate" type="date" data-role="datebox" data-options='{"mode": "calbox", 'calTodayButton': true}'>
 				</div>
 				
 				
@@ -351,7 +352,7 @@
 
 		
 		
-		<div data-role="page" id="construction" data-add-back-btn="true">
+		<div data-role="page" id="construction" data-add-back-btn="true" data-theme="a">
 	
 		<div data-role="header">
 			<h1>Under Construction!</h1>
@@ -386,7 +387,7 @@
 	
 	</div>
 	
-<div data-role="page" id="others"  data-add-back-btn="true">
+<div data-role="page" id="others"  data-add-back-btn="true" data-theme="a">
 	<div data-role="header">
 			<h1>Other Orders</h1>
 		</div>

@@ -6,7 +6,7 @@
 window.addEventListener("DOMContentLoaded", function(){
 	
 	//getElementById Function
-	function s(x){
+	function $(x){
 		var theElement = document.getElementById(x);
 		return theElement;
 	};
@@ -16,7 +16,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	
 	function makeCats(){
 		var formTag = document.getElementsByTagName("form");
-		var selectLi = s('select');
+		var selectLi = $('select');
 		selectLi.setAttribute("id","group");
 		
 		for(var i=0, j=whereToEat.length; i<j; i++){
@@ -33,17 +33,17 @@ window.addEventListener("DOMContentLoaded", function(){
 	function toggleControls(n){
 		switch(n){
 			case "on":
-				s('form').style.display = "none";
-				s('clear').style.display = "inline";
-				s('displayLink').style.display = "none";
-				s('addNew').style.display = "inline";
+				$('form').style.display = "none";
+				$('clear').style.display = "inline";
+				$('displayLink').style.display = "none";
+				$('addNew').style.display = "inline";
 				break;
 			case "off":
-				s('form').style.display = "block";
-				s('clear').style.display = "inline";
-				s('displayLink').style.display = "inline";
-				s('addNew').style.display = "none";
-				s('items').style.display = "none";
+				$('form').style.display = "block";
+				$('clear').style.display = "inline";
+				$('displayLink').style.display = "inline";
+				$('addNew').style.display = "none";
+				$('items').style.display = "none";
 				break;
 			default:
 				return false;
@@ -62,8 +62,8 @@ window.addEventListener("DOMContentLoaded", function(){
 		}
 		
 	function getCheckBoxValue(){
-		if(s('fav').checked){
-			favValue = s('fav').value;
+		if($('fav').checked){
+			favValue = $('fav').value;
 		}else{
 			favValue = "No"
 		}
@@ -85,16 +85,16 @@ window.addEventListener("DOMContentLoaded", function(){
  		console.log(id);
  		
  		var item 				= {};
- 			  item.name			= ["Name: ", s('name').value]; 		
+ 			  item.name			= ["Name: ", $('name').value]; 		
  			  //item.pword		= ["Password: ", $('pword').value]; 		
- 			  item.email		= ["Email: ", s('email').value];			
- 			  item.phone		= ["Phone: ", s('phone').value];
+ 			  item.email		= ["Email: ", $('email').value];			
+ 			  item.phone		= ["Phone: ", $('phone').value];
  			  item.crave		= ["Craving: ", craveValue];
  			  item.fav			= ["Favorite? :", favValue];
- 			  item.hunger		= ["How Hungry: ", s('hungry').value];
- 			  item.date			= ["Date:", s('date').value];
- 			  item.where		= ["How/Where: ", s('group').value];
- 			  item.comment		= ["Instructions: ", s('instructions').value];
+ 			  item.hunger		= ["How Hungry: ", $('hungry').value];
+ 			  item.date			= ["Date:", $('date').value];
+ 			  item.where		= ["How/Where: ", $('group').value];
+ 			  item.comment		= ["Instructions: ", $('instructions').value];
  			  
  			  
  			  	
@@ -199,10 +199,10 @@ window.addEventListener("DOMContentLoaded", function(){
 		toggleControls("off");
 		
 		//populate the form fields with the current localStorage values.
-		s('name').value = item.name[1];
+		$('name').value = item.name[1];
 		//$('pword').value = item.pword[1];
-		s('email').value = item.email[1];
-		s('phone').value = item.phone[1];
+		$('email').value = item.email[1];
+		$('phone').value = item.phone[1];
 		var radios = document.forms[0].food;
 		for(var i=0; i<radios.length; i++){
 			if(radios[i].value == "chinese" && item.crave[1] == "chinese"){
@@ -216,31 +216,25 @@ window.addEventListener("DOMContentLoaded", function(){
 			}else if(radios[i].value == "american" && item.crave[1] == "american"){
 				radios[i].setAttribute("checked", "checked");
 			}
-			if(radios[i].value == "italian" && item.crave[1] == "italian"){
-				radios[i].setAttribute("checked", "checked");
-			}else if(radios[i].value == "other" && item.crave[1] == "other"){
-				radios[i].setAttribute("checked", "checked");
-			}
-
 		if(item.fav[1] == "Yes"){
-			s('fav').setAttribute("checked", "checked");
+			$('fav').setAttribute("checked", "checked");
 		}
 
 			
 		if(item.fav[1] == "Yes"){
-			s('fav').setAttribute("checked", "checked");
+			$('fav').setAttribute("checked", "checked");
 		}
 		}	
 		
-		s('date').value = item.date[1];
-		s('group').value = item.where[1];
-		s('instructions').value = item.comment[1];
+		$('date').value = item.date[1];
+		$('group').value = item.where[1];
+		$('instructions').value = item.comment[1];
 	
 		//Remove the initial listener from the input 'save lunch ' button
 		save.removeEventListener("click", storeData);
 		//change Submit Button Value to Edit Button
-		s('submit').value = "Edit Order";
-		var editSubmit = s('submit');
+		$('submit').value = "Edit Order";
+		var editSubmit = $('submit');
 		//save the key value established in this function as a property of the editSubmit event
 		//so we can use that value when we save the data we edited.
 		editSubmit.addEventListener("click", validate);
@@ -272,10 +266,10 @@ window.addEventListener("DOMContentLoaded", function(){
 	
 	function validate(e){
 		//define the elements we want to check
-		var getName = s('name');
-		var getEmail = s('email');
-		var getDate = s('date');
-		var getGroup = s('group');
+		var getName = $('name');
+		var getEmail = $('email');
+		var getDate = $('date');
+		var getGroup = $('group');
 		
 		//Reset Error Messages
 		errMsg.innerHTML = "";
@@ -331,7 +325,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	
 	//Slider Value Displayed
 	function hungerLevel(){
-		hVal = s('hungry').value;
+		hVal = $('hungry').value;
 			console.log(hVal);
 		var makeDiv = document.getElementById("hungerNum");
 		makeDiv.innerHTML = hVal;
@@ -343,17 +337,17 @@ window.addEventListener("DOMContentLoaded", function(){
 	var whereToEat = ["--Where to Eat--", "Sit Down", "Pick Up", "Delivery", "Cook Your Own"],
 		craveVaule,
 		faveValue = "No"
-		errMsg = s('errors');
+		errMsg = $('errors');
 	makeCats();
 	
 	//Set Links & Submit Click Events
-	var displayLink = s('displayLink');
+	var displayLink = $('displayLink');
 	displayLink.addEventListener("click", getData)
-	var clearLink = s('clear');
+	var clearLink = $('clear');
 	clearLink.addEventListener("click", clearLocal); 
-	var save = s('submit');
+	var save = $('submit');
 	save.addEventListener("click", validate);
-	var hungerNum = s('hungry');
+	var hungerNum = $('hungry');
 	hungerNum.addEventListener("change", hungerLevel);
 });
 

@@ -1,0 +1,70 @@
+/* HTML CSS */
+html {
+	font-family:"Helvetica CY", sans-serif;
+	background-color: #cccccc;
+	margin: 5px;
+	padding: 5px;
+}
+/* Links */
+a{ 
+	font-color: blue;
+	padding: 2px;
+}
+/* Title */
+title{
+	font-weight:600;
+}
+/* Paragraph */
+p{
+	font-variant:small-caps;
+	font-size:large;
+}
+/* Input Field */
+input{
+	border-style:groove;
+	border-color:black;
+	border-width: 1px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+}
+/* Select Box*/
+select {
+	border-style:groove;
+	border-color:black;
+	border-width: 1px;
+	
+}
+
+/* Header 1 */
+h1 {
+	font-weight: 100;
+	font-size: 45;
+}
+
+/* Legend */
+legend {
+	text-align: center;
+	padding-bottom: 20px;
+	
+}
+
+/* fieldset */
+fieldset {
+	background-color: #6699ff;
+	margin: 10px;
+	padding: 5px;
+	border-style:groove;
+	border-color: #003366;
+}
+
+/* Text Area */
+textarea {
+	border-style:groove;
+	border-color:black;
+	border-width: 1px;
+}
+
+

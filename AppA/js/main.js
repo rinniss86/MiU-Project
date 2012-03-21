@@ -1,5 +1,5 @@
 window.addEventListener("DOMContentLoaded", function(){
-	
+
 	//getElementById Function
 	function s(x){
 		var theElement = document.getElementById(x);
@@ -7,13 +7,13 @@ window.addEventListener("DOMContentLoaded", function(){
 	};
 
 	//Create select field element and populate with options.
-	
-	
-	function makeCats(){
+
+
+	/*function makeCats(){
 		var formTag = document.getElementsByTagName("form");
 		var selectLi = s('select');
 		selectLi.setAttribute("id","group");
-		
+
 		for(var i=0, j=whereToEat.length; i<j; i++){
 			var makeOption = document.createElement('option');
 			var optText = whereToEat[i];
@@ -22,9 +22,9 @@ window.addEventListener("DOMContentLoaded", function(){
 			console.log("option is:" + makeOption.text);
 			selectLi.appendChild(makeOption);
 			};
-	};
-	
-	
+	};*/
+
+
 	function toggleControls(n){
 		switch(n){
 			case "on":
@@ -44,9 +44,9 @@ window.addEventListener("DOMContentLoaded", function(){
 				return false;
 		}
 	}
-	
+
 	function storeData (key){
-		
+
 		function getSelectedRadio(){
 			var radios = document.forms[0].food;
 			for(var i=0; i<radios.length; i++){
@@ -55,7 +55,7 @@ window.addEventListener("DOMContentLoaded", function(){
 				}
 			}
 		}
-		
+
 	function getCheckBoxValue(){
 		if(s('fav').checked){
 			favValue = s('fav').value;
@@ -65,7 +65,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	}
 		//If there is no key, this means this is a brand new item and we need a new key.
 		if(!key){
-		
+
  		var id = Math.floor(Math.random()*9999999);
  		}else{
  			//Set the id to the existing key we;re editing so that it will save over the data.
@@ -98,7 +98,7 @@ window.addEventListener("DOMContentLoaded", function(){
  		localStorage.setItem(id, JSON.stringify(item));
  		alert("Form Submitted");
  	}; 
-	
+
 	function getData(){
 		toggleControls("on");
 		if(localStorage.length === 0){
@@ -122,7 +122,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			var obj = JSON.parse(value);
 			var makeSubList = document.createElement('ul');
 			makeli.appendChild(makeSubList);
-			getImage(obj.where[1], makeSubList);
+			getImage(obj.select[1], makeSubList);
 			for(var n in obj){
 				console.log(obj[n]);
 				var makeSubli = document.createElement('li');
@@ -134,7 +134,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			makeItemLinks(localStorage.key(i), linksLi); //Create our edit and delete buttons/links for each item in local storage.
 		}
 	}
-	
+
 	//Get the Image For the Right Category
 	function getImage(catName, makeSubList){
 	console.log("category name is:" + catName);
@@ -144,8 +144,8 @@ window.addEventListener("DOMContentLoaded", function(){
 		var setSrc = newImg.setAttribute("src","images/"+ catName +".png");
 		imageLi.appendChild(newImg);
 	}
-	
-	
+
+
 	//Auto Populate Local Storage
 	function autoFillData(){
 		//The actual JSON OBJECT data required for this to work is coming from our json.js file, which is laoded from our HTML page
@@ -154,9 +154,9 @@ window.addEventListener("DOMContentLoaded", function(){
 			var id = Math.floor(Math.random()*9999999);
 			localStorage.setItem(id, JSON.stringify(json[n]));
 		}
-		
+
 	}
-	
+
 	//Make Item Links
 	//Create the edit and delete links for each stored item when displayed.
 	function makeItemLinks(key, linksLi){
@@ -168,12 +168,12 @@ window.addEventListener("DOMContentLoaded", function(){
 		editLink.addEventListener("click", editItem);
 		editLink.innerHTML = editText;
 		linksLi.appendChild(editLink);
-		
+
 		//add line break
 		var breakTag = document.createElement('br');
 		linksLi.appendChild(breakTag);
-		
-		
+
+
 		//add delete single item link
 		var deleteLink = document.createElement('a');
 		deleteLink.href = "#";
@@ -182,17 +182,17 @@ window.addEventListener("DOMContentLoaded", function(){
 		deleteLink.addEventListener("click", deleteItem);
 		deleteLink.innerHTML = deleteText;
 		linksLi.appendChild(deleteLink);
-	
+
 	}
-	
+
 	function editItem(){
 		//grab the data from our item local storage.
 		var value = localStorage.getItem(this.key);
 		var item = JSON.parse(value);
-		
+
 		//show the form
 		toggleControls("off");
-		
+
 		//populate the form fields with the current localStorage values.
 		s('name').value = item.name[1];
 		//$('pword').value = item.pword[1];
@@ -205,7 +205,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			}else if(radios[i].value == "spanish" && item.crave[1] == "spanish"){
 				radios[i].setAttribute("checked", "checked");
 			}
-			
+
 			if(radios[i].value == "indian" && item.crave[1] == "indian"){
 				radios[i].setAttribute("checked", "checked");
 			}else if(radios[i].value == "american" && item.crave[1] == "american"){
@@ -221,16 +221,16 @@ window.addEventListener("DOMContentLoaded", function(){
 			s('fav').setAttribute("checked", "checked");
 		}
 
-			
+
 		if(item.fav[1] == "Yes"){
 			s('fav').setAttribute("checked", "checked");
 		}
 		}	
-		
+
 		s('date').value = item.date[1];
 		s('select').value = item.select[1];
 		s('instructions').value = item.comment[1];
-	
+
 		//Remove the initial listener from the input 'save lunch ' button
 		save.removeEventListener("click", storeData);
 		//change Submit Button Value to Edit Button
@@ -241,7 +241,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		editSubmit.addEventListener("click", validate);
 		editSubmit.key = this.key;
 	}
-	
+
 	function deleteItem(){
 		var ask = confirm("Are you sure you want to delete this order?");
 		if(ask){
@@ -252,11 +252,11 @@ window.addEventListener("DOMContentLoaded", function(){
 			alert("Order was NOT deleted");
 		}
 	}
-	
+
 	function clearLocal(){
 		if(localStorage.length === 0){
 			alert("There is no data to clear.")
-		
+
 		}else{
 			localStorage.clear();
 			alert("Goodbye Hunger");
@@ -264,20 +264,20 @@ window.addEventListener("DOMContentLoaded", function(){
 			return false;
 		}
 	}
-	
-	
-	
+
+
+
 	var parseOrderForm = function(data){
 	// uses form data here;
 	console.log(data);
 };
 
 $(document).ready(function(){
-	
+
 	var oform = $('#form');
 	oferrorslink = $('#oferrorslink')
 	;
-	
+
 	oform.validate({
 		invalidHandler: function(form, validator){
 			oferrorslink.click();
@@ -295,13 +295,13 @@ $(document).ready(function(){
 			parseOrderForm(data);
 		}
 	});
-	
+
 
 
 });
-	
-	
-	
+
+
+
 	/*function validate(e){
 		//define the elements we want to check
 		var getName = s('name');
@@ -369,15 +369,15 @@ $(document).ready(function(){
 		makeDiv.innerHTML = hVal;
 	}
 */
-	
-	
+
+
 	//Variable defaults
 	var whereToEat = ["--Where to Eat--", "Sit Down", "Pick Up", "Delivery", "Cook Your Own"],
 		craveVaule,
 		faveValue = "No"
 		errMsg = s('errors');
-	makeCats();
-	
+	//makeCats();
+
 	//Set Links & Submit Click Events
 	var displayLink = s('displayLink');
 	displayLink.addEventListener("click", getData)
@@ -388,4 +388,3 @@ $(document).ready(function(){
 	var hungerNum = s('hungry');
 	//hungerNum.addEventListener("change", hungerLevel);
 });
-

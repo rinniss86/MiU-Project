@@ -1,0 +1,85 @@
+<!-- Richard Inniss
+	Project 3
+	VFW 2/12 -->
+<html>
+	<head>
+		
+		<meta charset="utf-8" />
+		<meta name="description" content="Our very first HTML5 document." />
+		<meta name="keywords" content="html5, mobile development. Full Sail University" />
+		<meta robots="robots" content="index, follow" />
+		<meta name="robots" content="noidex, nofollow" />
+		<meta name="viewport" content="user-scalable=no, width=device-width" />
+		<meta name="viewport" content="target-densitydpi=device-dpi" />
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320"/>
+		<link rel="stylesheet" href="style.css" type="text/css" />
+	
+		<title>Lunch Time</title>
+
+	
+	</head>
+	
+	<body>
+		<h1> Lunch Time!</h1>
+		
+		<nav>
+			<a href="#" id="clear">Clear Stored Data</a>
+			<a href="#" id="displayLink">Display Data</a>
+			<a href="additem.html" id="addNew" style="display:none;">Add New Craving</a> 
+		</nav>
+
+		<form action="#" method="post" id="form">
+			<span>*Fields are Required.</span>
+				<fieldset>
+				<legend>Consumer</legend>
+				<ul id="errors"></ul>
+				<ul id="consumerInfo">
+					<li><label for="name">Name*:</label><input type="text" id="name" /></li>
+					<!-- <li><label for="pword">Password:</label><input type="password" id="pword" /></li> -->
+					<li><label for="email">E-mail*:</label><input type="email" id="email" placeholder="example@abc123.com" /></li>
+					<li><label for="phone">Phone(Optional)</label><input type="text" id="phone" placeholder="(xxx)xxx-xxxx" /></li>
+				</ul>
+			</fieldset>
+			<fieldset>
+				<legend>What are you Craving?</legend>
+				<ul>
+					<li><input type="radio" value="chinese" id="chinese" name="food" /><label for="chinese">Chinese</label></li>
+					<li><input type="radio" value="spanish" id="spanish" name="food" /><label for="spanish">Spanish</label></li>
+					<li><input type="radio" value="indian" id="indian" name="food" /><label for="indian">Indian</label></li>
+					<li><input type="radio" value="american" id="american" name="food" /><label for="american">American</label></li>
+				</ul>
+				<ul>
+					<li><input type="checkbox" id="fav" value="Yes" class="checkbox" /><label for="fav">Save as Favorite?</label></li>
+				</ul>
+			</fieldset>
+			<fieldset>
+				<legend>How do you want it?</legend>
+					<ul>
+						<li><label for="howMuch">How Hungry are You?</label><input type="range" min="0" max="10" step="1" value="hungry" id="hungry" /></li>
+						<div id="hungerNum"></div>
+						
+						<li><label for="when">When*:</label><input type="date" value="date" id="date" /></li>											<li><label for="group">Where to Eat*</label></li>	
+					<select id="select">
+						
+						<!-- <optgroup label="Order Out">
+							<option value="sitdown">Sit Down</option>
+							<option value="pickup">Pick Up</option>
+						</optgroup>
+						<optgroup label="Stay Home">
+							<option value="delivery">Delivery</option>
+							<option value="cook">Cook Your Own</option>
+						</optgroup> -->
+					</select>
+			<li><label for="instructions">Special Instructions</label><textarea id="instructions" placeholder="What Would You Like?"></textarea></li>
+			</fieldset></ul>
+			<input type="submit" value="Submit" id="submit" />
+					
+		</form>
+			<script type="text/javascript" src="js/json.js"></script>
+			<script type="text/javascript" src="js/main.js"></script>
+	</body>
+
+
+
+</html>
