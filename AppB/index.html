@@ -28,7 +28,7 @@
 	
 		<div data-role="header" data-position="fixed" data-theme="a">
 		</div>
-					<img src="images/OmNomNom.png" />
+					<center><img src="images/OmNomNom.png" /></center>
 		
 		<div data-role="content">
 			<label for="search-basic">Search:</label>
@@ -38,7 +38,7 @@
 			<p><a href="#pickup" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="b"><img src="images/Pick Up.png" />Pick Up</a></p>
 			<p><a href="#delivery" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="b"><img src="images/Delivery.png" />Delivery</a></p>
 			<p><a href="#sitdown" data-role="button" data-icon="arrow-r" data-iconpos="right" data-theme="b"><img src="images/Sit Down.png" />Sit Down</a></p>
-			<a href="additem.html">Food</a>
+			<a href="additem.html" data-role="button" data-icon="plus" data-iconpos="right" data-theme="b">Food</a>
 					</div>
 		
 		<div data-role="footer" data-id="home">
@@ -47,6 +47,7 @@
 					<li><a href="https://github.com/rinniss86/MiU-Project" data-icon="info">GitHub Link</a></li>
 					<li><a href="http://rinniss86.github.com/MiU-Project/AppB/index.html" data-icon="gear">GH Live Code</a></li>
 					<li><a href="http://rinniss86.github.com/MiU-Project/AppA/index.html" data-icon="home">Other App</a></li>
+					<li><a href="#home" data-icon="home">Home</a></li>
 				</ul>
 			</div>
 
@@ -60,7 +61,7 @@
 		<div data-role="header" data-theme="c">
 			<h1>Cook Your Own</h1>
 		</div>
-		
+		<center><img src="images/OmNomNom.png" /></center>
 
 		<div data-role="content" data-theme="b">
 			<div class="ui-grid-a">
@@ -116,6 +117,7 @@
 					<li><a href="https://github.com/rinniss86/MiU-Project" data-icon="info">GitHub Link</a></li>
 					<li><a href="http://rinniss86.github.com/MiU-Project/AppB/index.html" data-icon="gear">GH Live Code</a></li>
 					<li><a href="http://rinniss86.github.com/MiU-Project/AppA/index.html" data-icon="home">Other App</a></li>
+					<li><a href="#home" data-icon="home">Home</a></li>
 				</ul>
 			</div>
 
@@ -129,7 +131,7 @@
 		<div data-role="header" data-theme="c">
 			<h1>Pick Up</h1>
 		</div>
-		
+		<center><img src="images/OmNomNom.png" /></center>
 		<div data-role="content">
 			<p>Under Construction</p>
 		</div>
@@ -140,6 +142,7 @@
 					<li><a href="https://github.com/rinniss86/MiU-Project" data-icon="info">GitHub Link</a></li>
 					<li><a href="http://rinniss86.github.com/MiU-Project/AppB/index.html" data-icon="gear">GH Live Code</a></li>
 					<li><a href="http://rinniss86.github.com/MiU-Project/AppA/index.html" data-icon="home">Other App</a></li>
+					<li><a href="#home" data-icon="home">Home</a></li>
 				</ul>
 			</div>
 
@@ -153,7 +156,7 @@
 		<div data-role="header" data-theme="c">
 			<h1>Delivery</h1>
 		</div>
-		
+		<center><img src="images/OmNomNom.png" /></center>
 		<div data-role="content">
 			<p>Under Construction</p>
 		</div>
@@ -164,6 +167,7 @@
 					<li><a href="https://github.com/rinniss86/MiU-Project" data-icon="info">GitHub Link</a></li>
 					<li><a href="http://rinniss86.github.com/MiU-Project/AppB/index.html" data-icon="gear">GH Live Code</a></li>
 					<li><a href="http://rinniss86.github.com/MiU-Project/AppA/index.html" data-icon="home">Other App</a></li>
+					<li><a href="#home" data-icon="home">Home</a></li>
 				</ul>
 			</div>
 
@@ -177,7 +181,7 @@
 		<div data-role="header" data-theme="c">
 			<h1>Sit Down</h1>
 		</div>
-		
+		<center><img src="images/OmNomNom.png" /></center>
 		<div data-role="content">
 		
 			<div data-role="collapsible-set">
@@ -235,6 +239,7 @@
 					<li><a href="https://github.com/rinniss86/MiU-Project" data-icon="info">GitHub Link</a></li>
 					<li><a href="http://rinniss86.github.com/MiU-Project/AppB/index.html" data-icon="gear">GH Live Code</a></li>
 					<li><a href="http://rinniss86.github.com/MiU-Project/AppA/index.html" data-icon="home">Other App</a></li>
+					<li><a href="#home" data-icon="home">Home</a></li>
 					
 				</ul>
 			</div>
@@ -242,84 +247,14 @@
 		
 	</div>
 	
-	<div data-role="page" id="form" data-add-back-btn="true">
-	
-	<h1> Lunch Time!</h1>
-		
-		<nav>
-			<a href="#" id="clear">Clear Stored Data</a>
-			<a href="#" id="displayLink">Display Data</a>
-			<a href="additem.html" id="addNew" style="display:none;">Add New Craving</a> 
-		</nav>
-
-		<form action="#" method="post" id="form" data-ajax="false">
-			<span>*Fields are Required.</span>
-				<div data-role="fieldcontain">
-				<legend>Consumer</legend>
-				<ul id="errors"></ul>
-				<ul id="consumerInfo">
-					<li><label for="name">Name*:</label><input type="text" id="name" /></li>
-					<!-- <li><label for="pword">Password:</label><input type="password" id="pword" /></li> -->
-					<li><label for="email">E-mail*:</label><input type="email" id="email" placeholder="example@abc123.com" /></li>
-					<li><label for="phone">Phone(Optional)</label><input type="text" id="phone" placeholder="(xxx)xxx-xxxx" /></li>
-				</ul>
-				</div>
-				<div data-role="fieldcontain">
 			
-				<legend>What are you Craving?</legend>
-				<ul>
-					<li><input type="radio" value="chinese" id="chinese" name="food" /><label for="chinese">Chinese</label></li>
-					<li><input type="radio" value="spanish" id="spanish" name="food" /><label for="spanish">Spanish</label></li>
-					<li><input type="radio" value="indian" id="indian" name="food" /><label for="indian">Indian</label></li>
-					<li><input type="radio" value="american" id="american" name="food" /><label for="american">American</label></li>
-					<li><input type="radio" value="italian" id="italian" name="food" /><label for="italian">Italian</label></li>
-					<li><input type="radio" value="other" id="other" name="food" /><label for="other">Other</label></li>
-				</ul>
-				<ul>
-					<li><input type="checkbox" id="fav" value="Yes" class="checkbox" /><label for="fav">Save as Favorite?</label></li>
-				</ul>
-				</div>
-				<div data-role="fieldcontain">
-			
-				<legend>How do you want it?</legend>
-					<ul>
-						<li><label for="howMuch">How Hungry are You?</label><input type="range" min="0" max="10" step="1" value="hungry" id="hungry" /></li>
-						<div id="hungerNum"></div>
-						
-						<li><label for="when">When*:</label><input type="date" value="date" id="date" /></li>											<li><label for="group">Where to Eat*</label></li>	
-					<select id="select">
-						
-						
-					</select>
-			<li><label for="instructions">Special Instructions</label><textarea id="instructions" placeholder="What Would You Like?"></textarea></li>
-			</div></ul>
-			<input type="submit" value="Submit" id="submit" />
-					
-		</form>
-		
-		<div data-role="footer" data-id="home">
-			<div data-role="navbar">
-				<ul>
-					<li><a href="https://github.com/rinniss86/MiU-Project" data-icon="info">GitHub Link</a></li>
-					<li><a href="http://rinniss86.github.com/MiU-Project/AppB/index.html" data-icon="gear">GH Live Code</a></li>
-					<li><a href="#" data-icon="home">Other App</a></li>
-				</ul>
-			</div>
-
-		</div>
-			<script type="text/javascript" src="js/json.js"></script>
-			<script type="text/javascript" src="js/main.js"></script>
-
-
-		</div>
-		
 		
 		<div data-role="page" id="construction" data-add-back-btn="true">
 	
 		<div data-role="header">
 			<h1>Under Construction!</h1>
 		</div>
-		
+		<center><img src="images/OmNomNom.png" /></center>
 		<div data-role="content">
 			<p>Under Construction!</p>
 		</div>
@@ -330,6 +265,7 @@
 					<li><a href="https://github.com/rinniss86/MiU-Project" data-icon="info">GitHub Link</a></li>
 					<li><a href="http://rinniss86.github.com/MiU-Project/AppB/index.html" data-icon="gear">GH Live Code</a></li>
 					<li><a href="http://rinniss86.github.com/MiU-Project/AppA/index.html" data-icon="home">Other App</a></li>
+					<li><a href="#home" data-icon="home">Home</a></li>
 				</ul>
 			</div>
 
