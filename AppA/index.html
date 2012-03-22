@@ -16,6 +16,8 @@
 	
 	<!-- StyleSheets under here -->
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+	<link rel="stylesheet" type="text/css" href="http://dev.jtsage.com/cdn/datebox/latest/jquery.mobile.datebox.min.css" /> 
+
 	<link rel="stylesheet" href="css/style.css" />
 	
 	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
@@ -223,7 +225,7 @@
 	
 	<div data-role="page" id="order"  data-add-back-btn="true" data-theme="a">
 	<div data-role="header">
-		<h1> Lunch Time!</h1>
+		<h1> Om Nom Nom!</h1>
 	</div>	
 		
 			<a href="#" id="clear" data-role="button" data-icon="delete" data-iconpos="right" data-theme="a">Clear Stored Data</a>
@@ -320,9 +322,11 @@
 					<input type="reset" value="Reset" id="reset" data-theme="a" />
 				</div>
 				
-			<a href="#errors" id="oferrorslink" data-rel="dialog" data-transition="pop">Errors</a>
-					
+				
+			
+				<div class="showIt" id="previewInfo" data-role="fieldcontain"></div>	
 		</form>
+		
 		
 		<div data-role="footer" data-id="home" data-position="fixed">
 			<div data-role="navbar">
@@ -337,18 +341,7 @@
 
 	</div>
 	
-	<div data-role="dialog" id="errors">
 	
-		<div data-role="header" data-position="fixed">
-			<h1>Incorrect Fields</h1>
-		</div>
-		
-		<div data-role="content">
-			<ul>
-				<li>Test.</li>
-			</ul>
-		</div>
-	</div>	
 
 		
 		
@@ -513,6 +506,8 @@
 		<!-- JavaScript Here -->
 		<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 		<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+		<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jquery.mobile.datebox.min.js"></script>
+		<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/i8n/jquery.mobile.datebox.i8n.en.js"></script>
 		<script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
 		<script type="text/javascript" src="js/json.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>

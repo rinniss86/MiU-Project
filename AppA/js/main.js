@@ -28,13 +28,13 @@ window.addEventListener("DOMContentLoaded", function(){
 	function toggleControls(n){
 		switch(n){
 			case "on":
-				s('form').style.display = "none";
+				s('order').style.display = "none";
 				s('clear').style.display = "inline";
 				s('displayLink').style.display = "none";
 				s('addNew').style.display = "inline";
 				break;
 			case "off":
-				s('form').style.display = "block";
+				s('order').style.display = "block";
 				s('clear').style.display = "inline";
 				s('displayLink').style.display = "inline";
 				s('addNew').style.display = "none";
@@ -60,7 +60,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		if(s('fav').checked){
 			favValue = s('fav').value;
 		}else{
-			favValue = "No"
+			favValue = "No";
 		}
 	}
 		//If there is no key, this means this is a brand new item and we need a new key.
@@ -106,7 +106,8 @@ window.addEventListener("DOMContentLoaded", function(){
 			autoFillData();
 		}
 		//Write Data from Local Storage to Browser.
-		var makeDiv = document.createElement('div');
+		//var makeDiv = document.createElement('div');
+		var makeDiv = document.getElementById('previewInfo');
 		makeDiv.setAttribute("id", "items");
 		var makeList = document.createElement('ul');
 		makeDiv.appendChild(makeList);
@@ -255,7 +256,7 @@ window.addEventListener("DOMContentLoaded", function(){
 
 	function clearLocal(){
 		if(localStorage.length === 0){
-			alert("There is no data to clear.")
+			alert("There is no data to clear.");
 
 		}else{
 			localStorage.clear();
@@ -275,21 +276,12 @@ window.addEventListener("DOMContentLoaded", function(){
 $(document).ready(function(){
 
 	var oform = $('#form');
-	oferrorslink = $('#oferrorslink')
-	;
+	
 
 	oform.validate({
 		invalidHandler: function(form, validator){
-			oferrorslink.click();
-			var html = '';
-			for(var key in validator.submitted){
-				var label = $('label[for^="'+ key +'"]').not('[generated]');
-				var legend = label.closest('fieldset').find('.ui-controlgroup-label');
-				var fieldName = legend.length ? legend.text() : label.text();
-				html += '<li>' + fieldName + '</li>';
-			};
-			$("#errors ul").html(html);
-		},
+			
+					},
 		submitHandler: function(){
 			var data = oform.serializeArray();
 			parseOrderForm(data);
@@ -374,13 +366,13 @@ $(document).ready(function(){
 	//Variable defaults
 	var whereToEat = ["--Where to Eat--", "Sit Down", "Pick Up", "Delivery", "Cook Your Own"],
 		craveVaule,
-		faveValue = "No"
+		faveValue = "No",
 		errMsg = s('errors');
 	//makeCats();
 
 	//Set Links & Submit Click Events
 	var displayLink = s('displayLink');
-	displayLink.addEventListener("click", getData)
+	displayLink.addEventListener("click", getData);
 	var clearLink = s('clear');
 	clearLink.addEventListener("click", clearLocal); 
 	var save = s('submit');
